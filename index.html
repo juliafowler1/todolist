@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <section ng-controller="TodoController as $ctrl">
+        <p>TODO LIST</p>
+        <p>A place to store the things you have to do!</p>
+        <input type="text" placeholder="Filter your to dos">
+        <ol>
+            <li ng-repeat="todo in $ctrl.tasks">
+                <!-- //if true hide button -->
+                <!--  ng if will hiide or show element, will show if true -->
+            <button ng-if="!todo.completed">Complete</button>
+            <!-- task name -->
+            <p ng-class="{completed: todo.completed}">{{ todo.task }}</p>
+            <a href>X</a>
+            </li>
+        </ol>
+        
+        <input type="text" placeholder="Add a task">
+        <button></button>
+
+
+
+    </section>
+
+
+
+
+
+    <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+</body>
+</html>
