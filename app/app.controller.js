@@ -8,6 +8,18 @@ function TodoController() {
         {task: "Cook dinner", completed: false},
         {task: "Get drinks", completed: false}
     ];
+vm.add = function(newTask) {
+    // console.log("new task")
+vm.tasks.push(angular.copy(newTask));
+vm.newTodo = {};
+}
+vm.delete = function(index) {
+    vm.tasks.splice(index, 1);
+}
+vm.completeTask = function(index) {
+    let i = index
+    vm.tasks[i].completed = true;
+}
 
 }
 angular.module("todoApp")

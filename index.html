@@ -16,34 +16,46 @@
             <h4>TODO LIST</h4>
             <h5>A place to store the things you have to do!</h5>
             <div class="inputContainer">
-                <input class="filter" type="text" placeholder="Filter your to-dos">
+                <input ng-model="$ctrl.filter" class="filter" type="text" placeholder="Filter your to-dos">
+                <!-- ng-repeat="task in vm.tasks | filter:searchText" -->
             </div>
             <ol>
-                <li ng-repeat="todo in $ctrl.tasks">
+                <li ng-repeat="todo in $ctrl.tasks | filter:$ctrl.filter">
                     <div class="container">
                         <span>{{$index + 1}}</span>
                         <!-- //if true hide button -->
-                        <!--  ng if will hiide or show element, will show if true -->
-                        <button class="toDoButton" ng-if="!todo.completed">Complete</button>
+                        <!--  ng-if will hide or show element, will show if true -->
+                        <button class="toDoButton" ng-if="!todo.completed"
+                            ng-click="$ctrl.completeTask($index)">Complete</button>
                         <!-- task name -->
                         <!-- ng-class is expecting an object -->
 
-
+                        <!-- if todo.completed is true, adds completed classs -->
                         <p ng-class="{completed: todo.completed}">{{ todo.task }}</p>
 
 
                     </div>
                     <div class="xbutton">
-                        <input type="image" src="xbutton.png">
+                        <img ng-click="$ctrl.delete($index);" src="xbutton.png">
                     </div>
                 </li>
             </ol>
-            <div class="inputContainer">
-                <input class="bottomInput" type="text" placeholder="Add a task">
-            </div>
-            <div class="buttonContainer">
-                <button class=".button bottomButton">Add</button>
-            </div>
+            <form ng-submit="$ctrl.add($ctrl.newTodo)">
+                <div class="inputContainer">
+                    <input class="taskInput" ng-model="$ctrl.newTodo.task" placeholder="Add your to-do">
+                </div>
+                <div class="buttonContainer">
+                    <button class=".button bottomButton">Add</button>
+                </div>
+            </form>
+
+            <!-- <div class="inputContainer">
+                <input class="taskInput" type="text" placeholder="Add a task">
+            </div> -->
+            <!-- submitting form calls function addTask -->
+            <!-- <div class="buttonContainer">
+                
+            </div> -->
         </section>
     </div>
 

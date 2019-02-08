@@ -4,46 +4,55 @@ body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
 }
+
 .appContainer {
     /* border: black solid; */
     justify-content: center;
     display: flex;
-    margin:95px;
+    margin: 95px;
 }
+
 section {
     background-color: white;
-    width: 60%;
-    height: 80%;
-    /* border: solid purple; */
-    height: 350px;
+    width: 40%;
+    /*height: 80%;
+    height: 350px; */
     border-radius: 10px;
     box-shadow: 1px 1px 2px black;
 }
+
 .container {
     /* border: solid red; */
     display: inline;
-
 }
 
 h4 {
     display: inline;
     font-size: 1.5em;
+    margin-left: 10px;
 }
+
 h5 {
     margin-top: 5px;
+    margin-left: 10px;
+}
+ol {
+    list-style-type: none;
 }
 p {
     display: inline;
 }
+
 .completed {
     text-decoration: line-through;
 }
+
 .filter {
     display: block;
     border-radius: 5px;
     width: 90%;
     height: 30px;
-    border: 1px solid #ccc ;
+    border: 1px solid #ccc;
 }
 
 a {
@@ -61,24 +70,33 @@ a {
     align-items: center;
     justify-content: right;*/
     /* border: solid green; */
-    
+}
 
-}
-.buttonContainer {
-    display: flex;
-    justify-content: center;
-}
 .toDoButton {
     border: solid #ff69b4;
     background-color: white;
     border-radius: 5px;
     font-family: 'Open Sans', sans-serif;
     color: #ff69b4;
-
-
 }
-.bottomButton
-{
+
+.inputContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.taskInput {
+    display: block;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+.bottomButton {
     font-family: 'Open Sans', sans-serif;
     background-color: #ff69b4;
     border-radius: 5px;
@@ -88,20 +106,11 @@ a {
     display: block;
     width: 90%;
     margin-top: 10px;
-    height: 33px
+    height: 33px;
+    margin-bottom: 20px;
+}
 
-}
-.inputContainer {
-    display: flex;
-    justify-content: center;
-}
-.bottomInput {
-    display: block;
-    border-radius: 5px;
-    width: 90%;
-    height: 30px;
-    border: 1px solid #ccc ;
-}
+
 /* .bottomButton {
     width: 90%;
     margin-bottom: 10px;
