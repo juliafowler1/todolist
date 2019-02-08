@@ -1,3 +1,117 @@
+body {
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+.appContainer {
+    border: black solid;
+    justify-content: center;
+    display: flex;
+    margin:95px;
+}
+section {
+    background-color: white;
+    width: 60%;
+    height: 80%;
+    border: solid purple;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black;
+}
+.container {
+    border: solid red;
+    display: inline;
+
+}
+ol {
+    list-style-type: none;
+    border: solid saddlebrown;
+    /* display: flex; */
+    flex-direction: column;
+}
+/* li {
+    text-align: 
+} */
+h4 {
+    display: inline;
+    font-size: 1.5em;
+}
+h5 {
+    margin-top: 5px;
+}
+p {
+    display: inline;
+}
 .completed {
     text-decoration: line-through;
 }
+.filter {
+    display: block;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc ;
+}
+
+a {
+    float: right;
+    /* display: flex; */
+    padding-right: 30px;
+}
+
+.xbutton {
+    display: inline;
+    margin-right: 10px;
+    position: relative;
+    justify-content: right;
+    /* display: flex;
+    align-items: center;
+    justify-content: right;*/
+    border: solid green;
+    
+
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+.toDoButton {
+    border: solid #ff69b4;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    color: #ff69b4;
+
+
+}
+.bottomButton
+{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ff69b4;
+    border-radius: 5px;
+    width: 40px;
+    border: none;
+    color: white;
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    height: 33px
+
+}
+.inputContainer {
+    display: flex;
+    justify-content: center;
+}
+.bottomInput {
+    display: block;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc ;
+}
+/* .bottomButton {
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+} */

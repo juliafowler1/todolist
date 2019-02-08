@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="todoApp">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
+
 <body>
-    <section ng-controller="TodoController as $ctrl">
-        <p>TODO LIST</p>
-        <p>A place to store the things you have to do!</p>
-        <input type="text" placeholder="Filter your to dos">
-        <ol>
-            <li ng-repeat="todo in $ctrl.tasks">
-                <!-- //if true hide button -->
-                <!--  ng if will hiide or show element, will show if true -->
-            <button ng-if="!todo.completed">Complete</button>
-            <!-- task name -->
-            <p ng-class="{completed: todo.completed}">{{ todo.task }}</p>
-            <a href>X</a>
-            </li>
-        </ol>
-        
-        <input type="text" placeholder="Add a task">
-        <button></button>
+    <div class="appContainer">
+        <section ng-controller="TodoController as $ctrl">
+            <h4>TODO LIST</h4>
+            <h5>A place to store the things you have to do!</h5>
+            <div class="inputContainer">
+                <input class="filter" type="text" placeholder="Filter your to-dos">
+            </div>
+            <ol>
+                <li ng-repeat="todo in $ctrl.tasks">
+                    <div class="container">
+                        <span>{{$index + 1}}</span>
+                        <!-- //if true hide button -->
+                        <!--  ng if will hiide or show element, will show if true -->
+                        <button class="toDoButton" ng-if="!todo.completed">Complete</button>
+                        <!-- task name -->
+                        <!-- ng-class is expecting an object -->
+
+
+                        <p ng-class="{completed: todo.completed}">{{ todo.task }}</p>
+
+
+                    </div>
+                    <div class="xbutton">
+                        <input type="image" src="xbutton.png">
+                    </div>
+                </li>
+            </ol>
+            <div class="inputContainer">
+                <input class="bottomInput" type="text" placeholder="Add a task">
+            </div>
+            <div class="buttonContainer">
+                <button class=".button bottomButton">Add</button>
+            </div>
+        </section>
+    </div>
 
 
 
-    </section>
 
 
 
@@ -38,4 +58,5 @@
     <script src="app/app.module.js"></script>
     <script src="app/app.controller.js"></script>
 </body>
+
 </html>
