@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- name of module -->
+<!-- ng-app=name of module -->
 <html lang="en" ng-app="todoApp">
 
 <head>
@@ -13,29 +13,32 @@
 
 <body>
     <div class="appContainer">
+        <!-- Sets up our controller as $ctrl to reference it -->
         <section ng-controller="TodoController as $ctrl">
             <h4>TODO LIST</h4>
             <h5>A place to store the things you have to do!</h5>
             <div class="inputContainer">
+                <!-- ng-model binds input text to a variable named $ctrl.filter -->
                 <input ng-model="$ctrl.filter" class="filter" type="text" placeholder="Filter your to-dos">
-
             </div>
+
             <ol>
+                <!-- ng-repeat creates new element for each item in tasks array, each item is now known as todo -->
+                <!-- then filtered by $ctrl.filter input -->
                 <li ng-repeat="todo in $ctrl.tasks | filter:$ctrl.filter">
                     <div class="container">
+                        <!-- $index variable is used to get the Index of an item repeated using ng-repeat directive  -->
                         <span>{{$index + 1}}</span>
                         <!-- if true hide button -->
-                        <!--  ng-if will hide or show element, will show if true, 
-                            by using ! it is set to false automatically -->
+                        <!--  ng-if will hide or show element(complete button), will show if true, 
+                            by using ! it is set to false automatically because we want the opposite, hide if true -->
+                        <!-- ng-click will call completeTask function which changes 
+                            !todo.completed element to true and hides button -->
                         <button class="toDoButton" ng-if="!todo.completed"
                             ng-click="$ctrl.completeTask($index)">Complete</button>
-                        <!-- task name -->
-                        <!-- ng-class is expecting an object -->
-
-                        <!-- if todo.completed is true, adds completed classs -->
+                        <!-- if todo.completed is true, ng-class adds completed class (strikethrough) -->
+                        <!-- because we change the value to true when we click Complete -->
                         <p ng-class="{completed: todo.completed}" contenteditable="true">{{ todo.task }}</p>
-
-
                     </div>
                     <div class="xbutton">
                         <!-- calls delete function which splices out task within array at clicked index -->
@@ -43,29 +46,19 @@
                     </div>
                 </li>
             </ol>
+            
+            <!-- ng-submit runs function add(newTodo) when form is submitted -->
             <form ng-submit="$ctrl.add($ctrl.newTodo)">
                 <div class="inputContainer">
-                    <input class="taskInput" ng-model="$ctrl.newTodo.task" placeholder="Add your to-do">
+                    <!-- ng-model creates new variable from the input text -->
+                    <input ng-model="$ctrl.newTodo.task" class="taskInput" placeholder="Add your to-do">
                 </div>
                 <div class="buttonContainer">
                     <button class=".button bottomButton">Add</button>
                 </div>
             </form>
-
-            <!-- <div class="inputContainer">
-                <input class="taskInput" type="text" placeholder="Add a task">
-            </div> -->
-            <!-- submitting form calls function addTask -->
-            <!-- <div class="buttonContainer">
-                
-            </div> -->
         </section>
     </div>
-
-
-
-
-
 
 
 
