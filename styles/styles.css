@@ -39,6 +39,8 @@ h5 {
 ol {
     list-style-type: none;
 }
+
+
 p {
     display: inline;
 }
@@ -66,10 +68,7 @@ a {
     margin-right: 10px;
     position: relative;
     justify-content: right;
-    /* display: flex;
-    align-items: center;
-    justify-content: right;*/
-    /* border: solid green; */
+
 }
 
 .toDoButton {
@@ -109,10 +108,3 @@ a {
     height: 33px;
     margin-bottom: 20px;
 }
-
-
-/* .bottomButton {
-    width: 90%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-} */

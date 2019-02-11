@@ -22,5 +22,6 @@ vm.completeTask = function(index) {
 }
 
 }
+// getter syntax
 angular.module("todoApp")
 .controller("TodoController", TodoController);

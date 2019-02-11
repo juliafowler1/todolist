@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- name of module -->
 <html lang="en" ng-app="todoApp">
 
 <head>
@@ -17,25 +18,27 @@
             <h5>A place to store the things you have to do!</h5>
             <div class="inputContainer">
                 <input ng-model="$ctrl.filter" class="filter" type="text" placeholder="Filter your to-dos">
-                <!-- ng-repeat="task in vm.tasks | filter:searchText" -->
+
             </div>
             <ol>
                 <li ng-repeat="todo in $ctrl.tasks | filter:$ctrl.filter">
                     <div class="container">
                         <span>{{$index + 1}}</span>
-                        <!-- //if true hide button -->
-                        <!--  ng-if will hide or show element, will show if true -->
+                        <!-- if true hide button -->
+                        <!--  ng-if will hide or show element, will show if true, 
+                            by using ! it is set to false automatically -->
                         <button class="toDoButton" ng-if="!todo.completed"
                             ng-click="$ctrl.completeTask($index)">Complete</button>
                         <!-- task name -->
                         <!-- ng-class is expecting an object -->
 
                         <!-- if todo.completed is true, adds completed classs -->
-                        <p ng-class="{completed: todo.completed}">{{ todo.task }}</p>
+                        <p ng-class="{completed: todo.completed}" contenteditable="true">{{ todo.task }}</p>
 
 
                     </div>
                     <div class="xbutton">
+                        <!-- calls delete function which splices out task within array at clicked index -->
                         <img ng-click="$ctrl.delete($index);" src="xbutton.png">
                     </div>
                 </li>
